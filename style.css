@@ -386,6 +386,14 @@
         }
 
         /* Responsive */
+        @media(max-width:411px){
+            .logo{
+                display: none !important;
+            }
+            .nav-container{
+                flex-direction: row-reverse;
+            }
+        }
         @media (max-width: 480px) {
             .side-menu {
                 width: 280px;
