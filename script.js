@@ -68,7 +68,7 @@
         document.querySelectorAll('a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(this.getAttribute('href').startsWith("#") ? this.getAttribute('href') : null);
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
