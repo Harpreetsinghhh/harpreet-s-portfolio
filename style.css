@@ -414,9 +414,6 @@
             .hero-labels{
                 flex-direction: column;
             }
-            .hero-content{
-                margin-top: 1rem;
-            }
             .experience-card{
                 padding: 1rem !important;
             }
@@ -982,6 +979,10 @@
             
             .section-title {
                 font-size: 2rem;
+            }
+
+            .hero-content{
+                margin-top: 1rem;
             }
             
             .nav-links {
