@@ -64,19 +64,24 @@
         }, 4000);
      
      
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href').startsWith("#") ? this.getAttribute('href') : null);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        
+        // Only handle internal anchor links
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+    });
+});
 
         // Animate skill bars on scroll
         const observerOptions = {
@@ -201,5 +206,4 @@
                 closeMenu();
             }
         });
-        document.getElementById('downloadResume').click();
      
