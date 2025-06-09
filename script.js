@@ -207,3 +207,39 @@
             }
         });
      
+
+//contact us
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = {
+        name: this.name.value,
+        phone: this.phone.value,
+        email: this.email.value,
+        subject: this.subject.value,
+        message: this.message.value
+    };
+    
+    fetch('send-email.php', { 
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Message sent successfully!');
+            this.reset(); // Reset the form
+        } else {
+            alert('Error sending message: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while sending the message.');
+    });
+});
