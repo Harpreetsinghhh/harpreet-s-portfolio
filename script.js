@@ -222,7 +222,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         message: this.message.value
     };
     
-    fetch('https://snazzy-sunburst-5883a0.netlify.app/mail/send-mail.php', { 
+    fetch('./mail/send-mail.php', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
