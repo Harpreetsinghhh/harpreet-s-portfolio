@@ -210,36 +210,111 @@
 
 //contact us
 
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+// Contact Form Handler - Simple Implementation
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
     
-    // Get form data
-    const formData = {
-        name: this.name.value,
-        phone: this.phone.value,
-        email: this.email.value,
-        subject: this.subject.value,
-        message: this.message.value
-    };
-    
-    fetch('./mail/send-mail.php', { 
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Message sent successfully!');
-            this.reset(); // Reset the form
-        } else {
-            alert('Error sending message: ' + data.message);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while sending the message.');
-    });
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+
+            // Get submit button
+            const submitBtn = contactForm.querySelector('button[type="submit"]') || 
+                             contactForm.querySelector('input[type="submit"]');
+            
+            // Show loading state
+            const originalText = submitBtn.textContent || submitBtn.value;
+            updateButtonState(submitBtn, 'Sending...', true);
+
+            try {
+                // Send to your PHP backend
+                const response = await fetch('send-email.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showAlert('✅ Email sent successfully!', 'success');
+                    contactForm.reset();
+                } else {
+                    showAlert('❌ Failed to send email: ' + result.message, 'error');
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                showAlert('❌ Network error. Please try again.', 'error');
+            } finally {
+                // Restore button
+                updateButtonState(submitBtn, originalText, false);
+            }
+        });
+    }
 });
+
+// Helper functions
+function updateButtonState(button, text, disabled) {
+    if (button.textContent !== undefined) {
+        button.textContent = text;
+    } else {
+        button.value = text;
+    }
+    button.disabled = disabled;
+}
+
+function showAlert(message, type) {
+    // Remove existing alerts
+    const existing = document.querySelector('.alert-message');
+    if (existing) existing.remove();
+
+    // Create alert
+    const alert = document.createElement('div');
+    alert.className = 'alert-message';
+    alert.textContent = message;
+    alert.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        z-index: 9999;
+        animation: slideIn 0.3s ease;
+        ${type === 'success' ? 'background: #28a745;' : 'background: #dc3545;'}
+    `;
+
+    // Add animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
+
+    document.body.appendChild(alert);
+
+    // Auto remove after 4 seconds
+    setTimeout(() => {
+        if (alert.parentNode) {
+            alert.style.animation = 'slideIn 0.3s ease reverse';
+            setTimeout(() => alert.remove(), 300);
+        }
+    }, 4000);
+}
