@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "api/mail.php": {
-      "runtime": "php@8.3"
-    }
-  },
   "routes": [
     {
       "src": "/api/mail",
