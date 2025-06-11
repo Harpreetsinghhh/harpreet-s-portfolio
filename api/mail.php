@@ -1,36 +1,52 @@
 <?php
 header('Content-Type: application/json');
 
-// Get the POST data
-$data = json_decode(file_get_contents('php://input'), true);
+// Include PHPMailer
+require_once '../vendor/autoload.php';
 
-// Mailtrap SMTP configuration
-$smtpHost = 'sandbox.smtp.mailtrap.io';
-$smtpPort = 587;
-$smtpUsername = 'b1f87ae81d36b2';
-$smtpPassword = 'f0deff852717c4';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-// Email content
-$to = 'preettt074@gmail.com';
-$subject = $data['subject'];
-$message = "Name: " . $data['name'] . "\n" .
-           "Email: " . $data['email'] . "\n" .
-           "Phone: " . $data['phone'] . "\n\n" .
-           "Message:\n" . $data['message'];
-$headers = "From: " . $data['email'];
+try {
+    // Get the POST data
+    $data = json_decode(file_get_contents('php://input'), true);
+    
+    if (!$data) {
+        throw new Exception('No data received');
+    }
 
-// Set up SMTP settings (requires proper server configuration)
-ini_set('SMTP', $smtpHost);
-ini_set('smtp_port', $smtpPort);
-ini_set('username', $smtpUsername);
-ini_set('password', $smtpPassword);
+    // Create a new PHPMailer instance
+    $mail = new PHPMailer(true);
 
-// Send email
-$success = mail($to, $subject, $message, $headers);
+    // SMTP configuration for Mailtrap
+    $mail->isSMTP();
+    $mail->Host = 'sandbox.smtp.mailtrap.io';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'b1f87ae81d36b2';
+    $mail->Password = 'f0deff852717c4';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
 
-if ($success) {
+    // Email settings
+    $mail->setFrom($data['email'], $data['name']);
+    $mail->addAddress('preettt074@gmail.com');
+    $mail->addReplyTo($data['email'], $data['name']);
+
+    // Email content
+    $mail->isHTML(false);
+    $mail->Subject = $data['subject'];
+    $mail->Body = "Name: " . $data['name'] . "\n" .
+                  "Email: " . $data['email'] . "\n" .
+                  "Phone: " . $data['phone'] . "\n\n" .
+                  "Message:\n" . $data['message'];
+
+    // Send email
+    $mail->send();
+    
     echo json_encode(['success' => true, 'message' => 'Email sent successfully']);
-} else {
-    echo json_encode(['success' => false, 'message' => 'Failed to send email']);
+    
+} catch (Exception $e) {
+    echo json_encode(['success' => false, 'message' => 'Failed to send email: ' . $e->getMessage()]);
 }
 ?>
