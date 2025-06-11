@@ -10,7 +10,7 @@
       "src": "api/mail.php",
       "use": "@vercel/php",
       "config": {
-        "includeFiles": ["vendor/**"]
+        "includeFiles": ["vendor/**", "composer.json", "composer.lock"]
       }
     }
   ],
