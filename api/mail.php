@@ -6,7 +6,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 
 // Mailtrap SMTP configuration
 $smtpHost = 'sandbox.smtp.mailtrap.io';
-$smtpPort = 2525;
+$smtpPort = 587;
 $smtpUsername = 'b1f87ae81d36b2';
 $smtpPassword = 'f0deff852717c4';
 
