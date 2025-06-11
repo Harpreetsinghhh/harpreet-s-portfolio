@@ -1,6 +1,7 @@
 {
   "functions": {
     "api/mail.php": {
+        "memory": 1024
     }
   },
   "routes": [
