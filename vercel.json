@@ -1,14 +1,14 @@
 {
   "functions": {
-    "/mail.php": {
+    "mail.php": {
       "runtime": "vercel-php@1.0.0"
     }
   },
   "routes": [
     {
-      "src": "/mail.php",
+      "src": "mail.php",
       "methods": ["POST"],
-      "dest": "/mail.php"
+      "dest": "mail.php"
     }
   ]
 }
