@@ -209,7 +209,6 @@
      
 
 //contact us
-
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -221,7 +220,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         subject: this.subject.value,
         message: this.message.value
     };
-    
+
     fetch('/api/mail.php', { 
         method: 'POST',
         headers: {
