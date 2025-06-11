@@ -3,5 +3,12 @@
     "mail/send-mail.php": {
       "runtime": "vercel-php@latest"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/mail/send-mail.php",
+      "methods": ["POST"],
+      "dest": "/mail/send-mail.php"
+    }
+  ]
 }
