@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "mail/send-mail.php": {
+      "runtime": "vercel-php@latest"
+    }
+  }
+}
