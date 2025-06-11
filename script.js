@@ -1,29 +1,3 @@
-  
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const button = this.querySelector('.submit-button');
-            const originalText = button.innerHTML;
-            
-            // Show loading state
-            button.innerHTML = 'Sending... <span class="arrow-icon">⏳</span>';
-            button.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                button.innerHTML = 'Message Sent! <span class="arrow-icon">✓</span>';
-                button.style.background = '#28a745';
-                
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.style.background = '#ff4444';
-                    button.disabled = false;
-                    this.reset();
-                }, 2000);
-            }, 1500);
-        });
-
         // Input focus effects
         const inputs = document.querySelectorAll('.form-input, .form-textarea');
         
@@ -210,15 +184,13 @@
 
 //contact me
 
-document.getElementsByClassName('emailButton').addEventListener('click', function() {
-    const myemail = 'preettt074@gmail.com';
-    
-    // Subject line
-    const subject = 'Contact Me';
-    
-    // Gmail compose URL with 'to' and 'subject'
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(myemail)}&su=${encodeURIComponent(subject)}`;
-    
-    // Open Gmail in a new tab
-    window.open(gmailUrl, '_blank');
+const buttons = document.getElementsByClassName('emailButton');
+Array.from(buttons).forEach(button => {
+    button.addEventListener('click', function() {
+        const myemail = 'preettt074@gmail.com';
+        const subject = 'Contact Me';
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(myemail)}&su=${encodeURIComponent(subject)}`;
+        
+        window.open(gmailUrl, '_blank');
+    });
 });

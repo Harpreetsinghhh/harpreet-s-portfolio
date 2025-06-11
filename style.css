@@ -737,7 +737,7 @@
             border-radius: 20px;
             padding: 3rem;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 3rem;
             align-items: center;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -1058,7 +1058,6 @@
             
             .contact-content {
                 padding-right: 0;
-                text-align: center;
             }
             
             .contact-title {
@@ -1269,4 +1268,8 @@
     .notification.show {
         transform: translateY(0);
     }
+}
+
+.emailButton{
+    cursor: pointer;
 }
