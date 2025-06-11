@@ -1,329 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harpreet Singh - Web Designer & Developer Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <div class="logo">Harpreet</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-social">
-    <a href="https://in.linkedin.com/in/harpreet-singh-sodal-699a3423a" 
-       class="social-icon" 
-       title="LinkedIn Profile" 
-       aria-label="Visit LinkedIn profile">
-        <i class="fab fa-linkedin-in"></i>
-    </a>
-    <a href="https://github.com/Harpreetsinghhh" 
-       class="social-icon" 
-       title="GitHub Profile" 
-       aria-label="Visit GitHub profile">
-        <i class="fab fa-github"></i>
-    </a>
-    <a href="https://www.instagram.com/harpreetsinghsodal/" 
-       class="social-icon" 
-       title="Instagram Profile" 
-       aria-label="Visit Instagram profile">
-        <i class="fab fa-instagram"></i>
-    </a>
-    <a href="tel:+919877095889" 
-       class="social-icon" 
-       title="Phone Number" 
-       aria-label="Call phone number">
-        <i class="fas fa-phone"></i>
-    </a>
-</div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="container nav-container">
+        <div class="logo">Harpreet</div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-social">
+          <a
+            href="https://in.linkedin.com/in/harpreet-singh-sodal-699a3423a"
+            class="social-icon"
+            title="LinkedIn Profile"
+            aria-label="Visit LinkedIn profile"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="https://github.com/Harpreetsinghhh"
+            class="social-icon"
+            title="GitHub Profile"
+            aria-label="Visit GitHub profile"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/harpreetsinghsodal/"
+            class="social-icon"
+            title="Instagram Profile"
+            aria-label="Visit Instagram profile"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="tel:+919877095889"
+            class="social-icon"
+            title="Phone Number"
+            aria-label="Call phone number"
+          >
+            <i class="fas fa-phone"></i>
+          </a>
         </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
 
-     <!-- Overlay -->
+    <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- Side Menu -->
-    <div class="side-menu" id="sideMenu">
-        <div class="menu-header">
-        </div>
-        
-       <div class="menu-nav nav-links">
-    <a class="nav-item" href="#home" aria-label="Navigate to Home section">Home</a>
-    <a class="nav-item" href="#about" aria-label="Navigate to About section">About</a>
-    <a class="nav-item" href="#services" aria-label="Navigate to Services section">Services</a>
-    <a class="nav-item" href="#contact" aria-label="Navigate to Contact section">Contact</a>
+   <!-- Side Menu -->
+<div class="side-menu" id="sideMenu">
+    <div class="menu-header">
     </div>
+    
+    <div class="menu-nav">
+        <a class="nav-item" href="#home">Home</a>
+        <a class="nav-item" href="#about">About</a>
+        <a class="nav-item" href="#services">Services</a>
+        <a class="nav-item" href="#contact">Contact</a>
     </div>
+    
+    <div class="menu-social">
+        <a href="https://in.linkedin.com/in/harpreet-singh-sodal-699a3423a" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/Harpreetsinghhh" class="social-icon">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.instagram.com/harpreetsinghsodal/" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="tel:+919877095889" class="social-icon">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+</div>
 
     <!-- Hero Section -->
     <section class="hero section" id="home">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <p class="hero-greeting">HELLO, I'M</p>
-                <h1 class="hero-name">Harpreet Singh</h1>
-                <!-- <h2 class="hero-title">Web Developer & Designer</h2> -->
-                 <div class="text-container">
-                    <div class="changing-text">
-                        <span>UI/UX Designer</span>
-                        <span>Web Developer</span>
-                        <span>Web Designer</span>
-                    </div>
-                </div>
-                <p class="hero-description">
-                    I create beautiful, functional websites that help businesses grow and succeed in the digital world. With a focus on user experience and clean code, I deliver solutions that make an impact.
-                </p>
-                <div class="hero-buttons">
-                    <a id="downloadResume" href="./files/harpreet_web_developer_resume.pdf" 
-                    class="btn" download="harpreet_web_developer_resume.pdf">
-                    View Resume
-                    </a>
-                    <a href="tel:+919877095889" class="btn transparent_btn_contact">Contact Me</a>
-                </div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <p class="hero-greeting">HELLO, I'M</p>
+          <h1 class="hero-name">Harpreet Singh</h1>
+          <!-- <h2 class="hero-title">Web Developer & Designer</h2> -->
+          <div class="text-container">
+            <div class="changing-text">
+              <span>UI/UX Designer</span>
+              <span>Web Developer</span>
+              <span>Web Designer</span>
             </div>
-            <div class="hero-image">
-                <div class="hero-photo">
-                    <img src="./images/portfolio.webp" alt="Harpreet Singh" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="hero-labels">
-                    <div class="label">UI/UX DESIGN</div>
-                    <div class="label">WEB DEVELOPMENT</div>
-                    <div class="label">BRANDING</div>
-                </div>
-                
-            </div>
+          </div>
+          <p class="hero-description">
+            I create beautiful, functional websites that help businesses grow
+            and succeed in the digital world. With a focus on user experience
+            and clean code, I deliver solutions that make an impact.
+          </p>
+          <div class="hero-buttons">
+            <a
+              id="downloadResume"
+              href="./files/harpreet_web_developer_resume.pdf"
+              class="btn"
+              download="harpreet_web_developer_resume.pdf"
+            >
+              View Resume
+            </a>
+            <a href="tel:+919877095889" class="btn transparent_btn_contact"
+              >Contact Me</a
+            >
+          </div>
         </div>
+        <div class="hero-image">
+          <div class="hero-photo">
+            <img
+              src="./images/portfolio.webp"
+              alt="Harpreet Singh"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+          <div class="hero-labels">
+            <div class="label">UI/UX DESIGN</div>
+            <div class="label">WEB DEVELOPMENT</div>
+            <div class="label">BRANDING</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section class="services section" id="services">
-        <div class="container">
-            <h2 class="section-title">My <span class="text-primary">Services</span></h2>
-            <p class="section-description">I offer a range of services to help your business establish a strong online presence and achieve your digital goals.</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                    <h3 class="service-title">Web Design</h3>
-                    <p class="service-desc">Beautiful, responsive designs that engage your audience and reflect your brand identity.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-code"></i></div>
-                    <h3 class="service-title">Web Development</h3>
-                    <p class="service-desc">Custom websites built with clean, efficient code and the latest technologies.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3 class="service-title">Responsive Design</h3>
-                    <p class="service-desc">Websites that look and function perfectly on all devices and screen sizes.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-search"></i></div>
-                    <h3 class="service-title">SEO Optimization</h3>
-                    <p class="service-desc">Improve your search rankings and visibility to attract more organic traffic.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">
+          My <span class="text-primary">Services</span>
+        </h2>
+        <p class="section-description">
+          I offer a range of services to help your business establish a strong
+          online presence and achieve your digital goals.
+        </p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+            <h3 class="service-title">Web Design</h3>
+            <p class="service-desc">
+              Beautiful, responsive designs that engage your audience and
+              reflect your brand identity.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-code"></i></div>
+            <h3 class="service-title">Web Development</h3>
+            <p class="service-desc">
+              Custom websites built with clean, efficient code and the latest
+              technologies.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3 class="service-title">Responsive Design</h3>
+            <p class="service-desc">
+              Websites that look and function perfectly on all devices and
+              screen sizes.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-search"></i></div>
+            <h3 class="service-title">SEO Optimization</h3>
+            <p class="service-desc">
+              Improve your search rankings and visibility to attract more
+              organic traffic.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Experience Section -->
     <section class="experience-section section" id="about">
-        <div class="container">
-            <h2 class="section-title">My <span class="text-primary">Experience</span></h2>
-            <p class="section-description">Years of experience creating digital solutions for clients across various industries.</p>
-            
-            <div class="experience-container">
-                <div class="experience-card">
-                    <div class="experience-number">2+</div>
-                    <div class="experience-text">
-                        Years Of<br>
-                        <strong>Experience</strong>
-                    </div>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div>
-                            <div class="stat-number">20+</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div>
-                            <div class="stat-number">18+</div>
-                            <div class="stat-label">Happy Clients</div>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div>
-                            <div class="stat-number">4+</div>
-                            <div class="stat-label">Ongoing Projects</div>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div>
-                            <div class="stat-number">100+</div>
-                            <div class="stat-label">Cups of Coffee</div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">
+          My <span class="text-primary">Experience</span>
+        </h2>
+        <p class="section-description">
+          Years of experience creating digital solutions for clients across
+          various industries.
+        </p>
+
+        <div class="experience-container">
+          <div class="experience-card">
+            <div class="experience-number">2+</div>
+            <div class="experience-text">
+              Years Of<br />
+              <strong>Experience</strong>
             </div>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div>
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div>
+                <div class="stat-number">18+</div>
+                <div class="stat-label">Happy Clients</div>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div>
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Ongoing Projects</div>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div>
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Cups of Coffee</div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section class="skills-section section">
-        <div class="container">
-            <h2 class="section-title">My <span class="text-primary">Skills</span></h2>
-            <p class="section-description">The tools and technologies I use to bring ideas to life and solve problems.</p>
-            
-            <div class="skills-grid">
-                <div class="skills-category">
-                    <h3>Design Skills</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">UI/UX Design</span>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Figma</span>
-                            <span class="skill-percentage">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Adobe XD</span>
-                            <span class="skill-percentage">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Photoshop</span>
-                            <span class="skill-percentage">75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 75%"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skills-category">
-                    <h3>Development Skills</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">HTML/CSS/JS</span>
-                            <span class="skill-percentage">95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Laravel</span>
-                            <span class="skill-percentage">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 85%"></div>
-                        </div>
-                    </div>
+      <div class="container">
+        <h2 class="section-title">
+          My <span class="text-primary">Skills</span>
+        </h2>
+        <p class="section-description">
+          The tools and technologies I use to bring ideas to life and solve
+          problems.
+        </p>
 
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">PHP</span>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 90%"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">React</span>
-                            <span class="skill-percentage">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Node.js</span>
-                            <span class="skill-percentage">75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Express js</span>
-                            <span class="skill-percentage">70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 70%"></div>
-                        </div>
-                    </div>
-                </div>
+        <div class="skills-grid">
+          <div class="skills-category">
+            <h3>Design Skills</h3>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">UI/UX Design</span>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 90%"></div>
+              </div>
             </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Figma</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Adobe XD</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Photoshop</span>
+                <span class="skill-percentage">75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-category">
+            <h3>Development Skills</h3>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">HTML/CSS/JS</span>
+                <span class="skill-percentage">95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 95%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Laravel</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">PHP</span>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 90%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">React</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Node.js</span>
+                <span class="skill-percentage">75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Express js</span>
+                <span class="skill-percentage">70%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact section" id="contact">
-        <div class="container">
-             <h2 class="section-title">Contact <span class="text-primary">Me</span></h2>
-            <p class="section-description">I'm always open to exciting opportunities, collaborations, or just a tech chat. Feel free to reach out!</p>
-            <br/>
-            <div class="contact-section">
-                <div class="contact-content">
-                    <div class="contact-label">GET IN TOUCH</div>
-                    <h2 class="contact-title">Let's Work Together</h2>
-                    <p class="contact-description">
-                        Have a project in mind or want to discuss potential opportunities? I'd love to hear from you. Fill out the form or reach out directly via email or phone.
-                    </p>
-                    <div class="contact-info" style="margin-top: 2rem;">
-                    <p style="margin-bottom: 0.5rem;" class="emailButton"><i class="fas fa-envelope" style="margin-right: 10px; color: var(--primary-color);"></i> preettt074@gmail.com</p>
-                    <a href="tel:+919877095889"><p><i class="fas fa-phone" style="margin-right: 10px; color: var(--primary-color);"></i> +91 9877095889</p></a>
-                    </div>
-                </div>
-                
+      <div class="container">
+        <h2 class="section-title">
+          Contact <span class="text-primary">Me</span>
+        </h2>
+        <p class="section-description">
+          I'm always open to exciting opportunities, collaborations, or just a
+          tech chat. Feel free to reach out!
+        </p>
+        <br />
+        <div class="contact-section">
+          <div class="contact-content">
+            <div class="contact-label">GET IN TOUCH</div>
+            <h2 class="contact-title">Let's Work Together</h2>
+            <p class="contact-description">
+              Have a project in mind or want to discuss potential opportunities?
+              I'd love to hear from you. Fill out the form or reach out directly
+              via email or phone.
+            </p>
+            <div class="contact-info" style="margin-top: 2rem">
+              <p style="margin-bottom: 0.5rem" class="emailButton">
+                <i
+                  class="fas fa-envelope"
+                  style="margin-right: 10px; color: var(--primary-color)"
+                ></i>
+                preettt074@gmail.com
+              </p>
+              <a href="tel:+919877095889"
+                ><p>
+                  <i
+                    class="fas fa-phone"
+                    style="margin-right: 10px; color: var(--primary-color)"
+                  ></i>
+                  +91 9877095889
+                </p></a
+              >
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-   <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
