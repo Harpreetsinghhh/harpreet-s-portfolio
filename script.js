@@ -222,7 +222,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         message: this.message.value
     };
     
-    fetch('/mail.php', { 
+    fetch('/api/mail.php', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
