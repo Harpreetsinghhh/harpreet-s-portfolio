@@ -1,12 +1,22 @@
 {
+  "version": 2,
   "functions": {
     "api/mail.php": {
-        "runtime": "vercel-php@0.7.3"
+      "runtime": "vercel-php@0.7.3"
     }
   },
+  "builds": [
+    {
+      "src": "api/mail.php",
+      "use": "@vercel/php",
+      "config": {
+        "includeFiles": ["vendor/**"]
+      }
+    }
+  ],
   "routes": [
     {
-      "src": "/api/mail.php",
+      "src": "/api/mail",
       "methods": ["POST"],
       "dest": "/api/mail.php"
     }
