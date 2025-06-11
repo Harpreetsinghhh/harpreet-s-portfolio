@@ -208,37 +208,17 @@
         });
      
 
-//contact us
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = {
-        name: this.name.value,
-        phone: this.phone.value,
-        email: this.email.value,
-        subject: this.subject.value,
-        message: this.message.value
-    };
+//contact me
 
-    fetch('/api/mail.php', { 
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Message sent successfully!');
-            this.reset(); // Reset the form
-        } else {
-            alert('Error sending message: ' + data.message);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while sending the message.');
-    });
+document.getElementsByClassName('emailButton').addEventListener('click', function() {
+    const myemail = 'preettt074@gmail.com';
+    
+    // Subject line
+    const subject = 'Contact Me';
+    
+    // Gmail compose URL with 'to' and 'subject'
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(myemail)}&su=${encodeURIComponent(subject)}`;
+    
+    // Open Gmail in a new tab
+    window.open(gmailUrl, '_blank');
 });
